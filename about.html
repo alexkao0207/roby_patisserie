@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於Roby</title>
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+
+<body>
+    <!-- 頁首區 -->
+    <header class="topbar">
+        <nav class="nav">
+
+            <div class="logo">
+                <h1>
+                    <a href="index.html">
+                        <img src="./images/logo-L-W.svg" alt="Roby甜點"> <!-- 放圖片 -->
+                    </a>
+                </h1>
+            </div>
+
+            <ul class="menu">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="products.html">PRODUCTS</a></li>
+                <li><a href="order.html">ORDER</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="qna.html">Q&A</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+
+            <div class="icon-div">
+                <p class="follow">FOLLOW</p>
+                <span class="follow_line"></span>
+                <ul class="icon">
+                    <li><a href="#" class="icon-ig"></a></li>
+                    <li><a href="#" class="icon-line"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 背景banner -->
+    <section id="banner">
+        <div class="pageHeading-container">
+            <div class="pageHeading-visual">
+                <figure class="pageHeading-img js-fadeVisual">
+                    <img src="./images/about-banner.jpg" alt="Roby">
+                </figure>
+            </div>
+            <div class="pageHeading-block">
+                <div class="pageHeading-box">
+                    <span class="line"></span>
+                    <h2 class="pageHeading-subTitle">ABOUT</h2>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌介紹內容 -->
+    <main>
+        <section id="about">
+            <!-- 圖片+文字 -->
+            <div class="about-div">
+                <div class="background ellipse"></div>
+                <h1>只想做好吃的東西 讓你開開心心</h1>
+                <p>我叫Roby，發音是ㄖㄨㄚ比，也可以叫我阿３！<br>
+
+                    從以前就喜歡做甜點，讀了餐飲科，去甜點店上班<br>
+                    覺得自己的基礎不夠就去日本從頭開始。<br>
+                    <br>讀了福岡的『中村製菓調理專門學校』<br>
+                    就讀期間在『patisserie Eau du ciel 』一間甜點小店打工。<br>
+                    畢業後回台灣，去了『文華東方酒店』甜點房。<br>
+                    <br>現在努力做著自己的甜點，
+                    有你們的支持跟回饋，是我最大的動力。<br>
+                    有任何想法建議或想許願或想大力稱讚我的都非常歡迎喲！
+                    </p>
+            </div>
+        </section>
+
+            <!-- 蛋糕 -->
+            <div class="smallcake">
+                <img class="scake" src="./images/cake-S.svg" alt="小蛋糕">
+            </div>
+            <div class="cake">
+                <img class="bcake" src="./images/cake-H.svg" alt="大蛋糕">
+            </div>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="footer_nav">
+            <div class="footer_div_l">
+                <a href="index.html" class="footer_logo">
+                    <img src="./images/logo-C.svg" alt="Roby甜點">
+                </a>
+                <small>©2024 Roby patisserie Co.</small>
+            </div>
+            <div class="footer_menu">
+                <ul class="footer_menubar">
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="order.html">ORDER</a></li>
+                    <li><a href="news.html">NEWS</a></li>
+                </ul>
+                <ul class="footer_menubar">
+                    <li><a href="qna.html">Q&A</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="footer_links">
+            <li class="li_links">
+                <a href="line_links">
+                    <div class="icon_en">
+                        <p>Official Line</p>
+                        <figure class="footer_icon">
+                            <img src="./images/icon-line-hover.svg" alt="官方Line">
+                        </figure>
+                    </div>
+                    <div class="links_name">@992qkjnp</div>
+                </a>
+            </li>
+            <li class="li_links">
+                <a href="ig_links">
+                    <div class="icon_en">
+                        <p>Official Instagram</p>
+                        <figure class="footer_icon">
+                            <img src="./images/icon-ig-hover.svg" alt="官方IG">
+                        </figure>
+                    </div>
+                    <div class="links_name">@roby_asan</div>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(window).scroll(function () {
+            const scroll = $(this).scrollTop();
+            const posTop = Math.round(scroll * 1);
+            const scale = 1 + (scroll * 0.001);
+            $('.js-fadeVisual').attr('style',
+                'top:' + posTop + 'px;' +
+                'transform:scale(' + scale + ');',
+            );
+        });
+    </script>
+</body>
+
+</html>

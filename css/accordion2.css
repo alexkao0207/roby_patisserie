@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* google font一定要在第二行 */
+
+:root {
+    --black: #23232b;
+    --dark-black: #111111;
+    --blue: #2ecee0;
+    --red: #f65044;
+    --green: #9A9C83;
+    --darkgreen: #686959;
+    --white: #ffffff;
+    --cream: #cec6be;
+    --spacing-s: 16px;
+    --spacing-m: 24px;
+    --spacing-l: 48px;
+}
+
+.accordion_div {
+    display: grid;
+    place-content: center;
+    font-family: "Montserrat", "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--green);
+}
+
+.accordion {
+    width: 500px;
+    padding: 16px;
+    border-bottom: 2px solid;
+}
+
+.accordion__title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.accordion__icons {
+    border: 3px solid;
+    border-color: transparent;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-content: center;
+    transition: 0.4s;
+}
+
+.accordion__icon--plus,
+.accordion__icon--minus {
+    grid-area: 1/1/2/2;
+    transition: 0.4s ease-in-out;
+    font-size: 2rem;
+}
+
+.accordion__icon--minus {
+    opacity: 0;
+    transform: rotate(-2turn);
+}
+
+.accordion__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.4s ease-in-out;
+}
+
+.accordion__content>* {
+    overflow: hidden;
+}
+
+/* active */
+.accordion.is-active .accordion__content {
+    grid-template-rows: 1fr;
+}
+
+.accordion.accordion.is-active .accordion__icons {
+    border-color: var(--white);
+}
+
+.accordion.is-active .accordion__icon--plus {
+    opacity: 0;
+    transform: rotate(2turn);
+}
+
+.accordion.is-active .accordion__icon--minus {
+    opacity: 1;
+    transform: rotate(0turn);
+}
+
+.accordion.is-active .accordion__content>* {
+    animation: overflowModify 0.5s ease-in-out forwards;
+}
+
+@keyframes overflowModify {
+
+    0%,
+    99.9% {
+        overflow: hidden;
+    }
+
+    100% {
+        overflow: visible;
+    }
+}

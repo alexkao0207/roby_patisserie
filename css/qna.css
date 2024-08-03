@@ -1,0 +1,350 @@
+@charset "utf-8";
+/* CSS第一行一定要有@charset "utf-8"; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* google font一定要在第二行 */
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+    /* 取消前面點點 */
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    display: block;
+    /* 區塊按鈕需從行內元素改成block */
+    color: var(--deep);
+    /* 指定按鈕顏色 */
+    text-decoration: none;
+    /* 取消按鈕底線 */
+}
+
+/* 以上以後每個網站都會使用,以上以後直接全部複製貼上 */
+
+:root {
+    --black: #23232b;
+    --dark-black: #111111;
+    --blue: #2ecee0;
+    --red: #f65044;
+    --green: #9A9C83;
+    --darkgreen: #686959;
+    --white: #ffffff;
+    --cream: #cec6be;
+    --spacing-s: 16px;
+    --spacing-m: 24px;
+    --spacing-l: 48px;
+}
+
+/* 頁首區 */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    z-index: 1;
+    filter: drop-shadow(1px 1px 5px var(--darkgreen));
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    /* navigation ul=navigation裡面的ul */
+    display: flex;
+}
+
+.menu li {
+    margin: 20px;
+}
+
+.menu a,
+.follow {
+    color: #9A9C83;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-size: 1rem;
+}
+
+.icon-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.logo {
+    width: 64px;
+    margin: 20px 134.64px 20px 20px;
+}
+
+.follow_line {
+    display: block;
+    margin: 0 10px;
+    width: 50px;
+    border-top:1.5px solid var(--green);
+}
+
+.icon a {
+    height: 20px;
+    width: 20px;
+    transition: .4s;
+    margin: 5px;
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+/* body區 */
+.accordion_div {
+    margin-bottom: 50px;
+}
+
+#qna {
+    display: flex;
+    flex-direction: column;
+    /* 主軸(垂直) */
+    justify-content: center;
+    /* 副軸(水平)置中 */
+    align-items: center;
+    position: relative;
+    margin-top: 120px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.h2_border {
+    margin: 0 50px;
+}
+
+.line {
+    width: 650px;
+    border-top:4px solid var(--darkgreen);
+}
+
+.title h2 {
+    color: var(--green);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.accordion__title {
+    font-family: "Shippori Mincho", 'Yu Mincho', '游明朝', YuMincho, 'Hiragino Mincho ProN', serif;
+    font-weight: 600;
+    font-size: clamp(124%, 1vw, 200%);
+    padding-top: 0.8em;
+    letter-spacing: 0.05em;
+}
+
+.accordion__content {
+    font-family: "Shippori Mincho", 'Yu Mincho', '游明朝', YuMincho, 'Hiragino Mincho ProN', serif;
+    font-weight: 300;
+    font-size: clamp(124%, 1vw, 200%);
+}
+
+/* 漂浮蛋糕 */
+.smallcake {
+    position: absolute;
+    animation-name: floating2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+@keyframes floating2 {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, -15px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+.cake {
+    position: absolute;
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.cake {
+    left: 50px;
+    bottom: 170px;
+}
+
+.smallcake {
+    right: 60px;
+    top: 150px;
+}
+
+.bcake {
+    transform: rotate(-30deg) scale(0.8);
+}
+
+.scake {
+    transform: rotate(20deg) scale(0.8);
+}
+
+/* 頁尾區 */
+footer {
+    height: 300px;
+    background-image: url(../images/footer-bg.svg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    color: #686959;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: .8rem;
+}
+
+.footer_nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+}
+
+.footer_div_l {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_logo {
+    width: 70px;
+    margin: 10px;
+}
+
+footer small {
+    color: #686959;
+}
+
+.footer_menu {
+    width: 400px;
+    display: flex;
+    gap: 70px;
+}
+
+footer div ul li {
+    margin: 20px 0;
+}
+
+.footer_menubar {
+    width: 40%;
+    margin-top: 50px;
+}
+
+.footer_links {
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    gap: 60px;
+    align-items: flex-end;
+    margin: 0 15% 50px 0;
+}
+
+.icon_en {
+    display: flex;
+}
+
+.footer_icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 0.5em;
+}
+
+.links_name {
+    margin: 20px 0;
+    padding-bottom: 16px;
+    border-bottom: #686959 solid 1px;
+}
